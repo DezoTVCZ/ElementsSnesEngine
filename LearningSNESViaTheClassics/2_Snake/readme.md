@@ -126,8 +126,8 @@ sadly 64Tass doesn't let us just do .word "string" so we have to do it character
 > ~~~
 > StatusRow
 > _data = ' snakes   score:0000  best:0000 '
-> .for s in range(len(_data))
-> .word _data[s]
+> .for i = 0, i < len(_data), i = i + 1
+> .word _data[i] & $FF - $40
 > .next
 > ~~~
 

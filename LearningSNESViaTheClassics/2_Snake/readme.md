@@ -1431,7 +1431,7 @@ A single dot is not much fun though, we need it to grow. In order to grow we nee
 
 ### How to get a "random" number?
 
-I'm going to go with the tried-and-true method known as a Linear Feedback Shift Register (LFSR) which is basically a bit stream that shifts a fixed amount and then you EOR the shifted out value back into specific bits of the stream again. There are "magic numbers" that give you a full period. It is not very random, as it will always give a strict order of numbers for a given seed and "eor number". Full details and the combinations can be found here https://codebase64.org/doku.php?id=base:small_fast_8-bit_prng for this project 8bit is sufficient.
+I'm going to go with the tried-and-true method known as a Linear Feedback Shift Register (LFSR) which is basically a bit stream that shifts a fixed amount and then you EOR the shifted out value back into specific bits of the stream again. There are "magic numbers" that give you a full period. It is not very random, as it will always give a strict order of numbers for a given seed and "eor number". Full details and the combinations can be found here https://codebase64.net/doku.php?id=base:small_fast_8-bit_prng for this project 8bit is sufficient.
 
 But that will give us a number between 0-255 we need a number between 1 and 30 and 2 and 23. So firstly we make it, 0-29 + 1 and 0-21 + 2, we can then mask off the next Power of Two value to cut it down much faster. I'm then just going to subtract the max value to bring it in range, this will give a bias to said overlap, however for this case I don't think it really matters too much.
 
@@ -2465,7 +2465,7 @@ Somewhere in the code area that handles collecting the _target_, and A is 8bit w
          stz SpeedDecCounter
 +
 ~~~
-and of cause we must initialize the `SpeedDecCounter` to something sensible, 0 for example in the _Init_ section.
+and of course we must initialize the `SpeedDecCounter` to something sensible, 0 for example in the _Init_ section.
 
 Sneaks up on you now doesn't it. As you get to a longer snake, it can get hard to spot the _club_ we could make it red so it stands out more. For this we will need to add another pallete entry, I will just do it manually since it is so trivial.
 

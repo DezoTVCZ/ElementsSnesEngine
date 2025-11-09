@@ -1455,17 +1455,17 @@ _tryAgain
       sec
       sbc #29
       jmp -
--  clc
++  clc
    adc #1
    sta TargetX
    jsr getRND_ad ; 2-23
    and #31
--  cmp #21
++  cmp #21
    bcc +
       sec
       sbc #21
       jmp -
--  clc
++  clc
    adc #1
    sta TargetY
    rep #$20  ; A16
@@ -2047,7 +2047,7 @@ _ASSERT_xy8
    lda TargetX
    asl a
    tay
-   lda #'{shift-x}' ; this is a club, we could put a Unicode character here but encodings will cause pain
+   lda #'{shift-x}'+$400 ; this is a club, we could put a Unicode character here but encodings will cause pain, make it red
    sta (DPPointer1),y
    rts
 

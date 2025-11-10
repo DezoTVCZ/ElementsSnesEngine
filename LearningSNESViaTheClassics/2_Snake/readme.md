@@ -1460,7 +1460,7 @@ _tryAgain
    sta TargetX
    jsr getRND_ad ; 2-23
    and #31
-+  cmp #21
+-  cmp #21
    bcc +
       sec
       sbc #21
@@ -2121,7 +2121,7 @@ _tryAgain
       sec
       sbc #29
       jmp -
--  clc
++  clc
    adc #1
    sta TargetX
    jsr getRND_ad ; 2-23
@@ -2131,7 +2131,7 @@ _tryAgain
       sec
       sbc #21
       jmp -
--  clc
++  clc
    adc #1
    sta TargetY
    rep #$20  ; A16
